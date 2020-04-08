@@ -45,7 +45,7 @@ export class SignupComponent {
       err => {
         this.loader = false;
         console.log(err);
-        this.openSnackBar('Usuário não cadastrado.');
+        this.openSnackBar('Email já cadastrado.');
       }
     );
   }
@@ -59,5 +59,8 @@ export class SignupComponent {
     });
   }
 
+  goToLogin() {
+    this.router.navigate(['/login']);
+  }
 
 }

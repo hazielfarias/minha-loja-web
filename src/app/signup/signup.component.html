@@ -1,6 +1,6 @@
 <div class="signup-container">
     <mat-card class="main">
-        <mat-card-title class="text-center mb-4">Tela de Login de Loja Virtual</mat-card-title>
+        <mat-card-title class="text-center mb-4">Cadastro de Usuário em Minha Loja</mat-card-title>
         <form class="form-signup" (ngSubmit)="onSubmit()" [formGroup]="signupForm">
 
             <mat-form-field class="w-100">
@@ -33,13 +33,14 @@
                 </mat-error>
             </mat-form-field>
 
-            <button mat-raised-button class="w-50 m-2 mb-3" color="primary" type="submit">Fazer cadastro</button>
+            <button mat-raised-button class="w-50 m-2 mb-3" color="primary" type="submit"
+                [disabled]="!signupForm.valid">Fazer cadastro</button>
         </form>
 
         <div class="divisor-register">
             <p class="divisor">
                 <span class="divisor-text">ou</span></p>
-            <button mat-raised-button class="button-login w-50 mt-2" type="button">Entrar</button>
+            <button mat-raised-button class="button-login w-50 mt-2" type="button" (click)="goToLogin()">Entrar</button>
         </div>
 
     </mat-card>

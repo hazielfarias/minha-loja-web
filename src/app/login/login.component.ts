@@ -45,6 +45,10 @@ export class LoginComponent {
     );
   }
 
+  goToRegister() {
+    this.router.navigate(['/signup']);
+  }
+
   openSnackBar() {
 
     this.snackBar.open('Usuário ou senha incorretos.', 'Fechar', {
