@@ -1,0 +1,37 @@
+<div class="login-container">
+    <mat-card class="main">
+        <mat-card-title class="text-center mb-4">Tela de Login de Loja Virtual</mat-card-title>
+        <form class="form-login" (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+            <mat-form-field class="w-100">
+                <mat-label>Email</mat-label>
+                <input matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                    Por favor insira um email válido
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Email é <strong>obrigatório</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-100 mt-2">
+                <mat-label>Senha</mat-label>
+                <input matInput [formControl]="passwordFormControl" placeholder="Ex. mypass13" type="password">
+                <mat-error *ngIf="passwordFormControl.hasError('required')">
+                    Senha é <strong>obrigatória</strong>
+                </mat-error>
+                <mat-error *ngIf="!passwordFormControl.hasError('required')">
+                    A senha deve ter no minimo 8 caracteres.
+                </mat-error>
+            </mat-form-field>
+            <button mat-raised-button class="w-50 m-2 mb-3" color="primary" type="submit">Entrar</button>
+        </form>
+
+        <div class="divisor-register">
+            <p class="divisor">
+                <span class="divisor-text">ou</span></p>
+            <button mat-raised-button class="button-register w-50 mt-2" type="button">Cadastre-se</button>
+        </div>
+
+    </mat-card>
+</div>
+<app-loader *ngIf="loader"></app-loader>>

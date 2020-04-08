@@ -1,0 +1,48 @@
+.login-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #59b7b7;
+  background-size: auto;
+
+  .main {
+    width: 640px;
+    padding: 40px;
+
+    .form-login {
+      min-width: 150px;
+      max-width: 400px;
+      width: 100%;
+      margin: auto;
+      text-align: center;
+    }
+    .divisor-register {
+      min-width: 150px;
+      max-width: 400px;
+      width: 100%;
+      margin: auto;
+      text-align: center;
+      .divisor {
+        background-image: linear-gradient(
+          180deg,
+          transparent 10px,
+          #7a7a7a94 0,
+          #7a7a7a94 11px,
+          transparent 0
+        );
+        text-align: center;
+
+        .divisor-text {
+          display: inline-block;
+          background-color: #fff;
+          padding: 0 10px;
+          text-transform: none;
+        }
+      }
+      .button-register {
+        background-color: rgb(207, 207, 207);
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+<mat-toolbar class="navbar-dashboard w-100">
+    <span class="mb-0 h3 text-white">{{user}}</span>
+    <button mat-flat-button class="button-logout text-white ml-auto" type="button" (click)="logout()">Sair</button>
+</mat-toolbar>
+<app-loader *ngIf="loader"></app-loader>
