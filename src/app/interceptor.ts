@@ -13,7 +13,11 @@ import { LoginService } from './services/login.service';
 /** Pass untouched request through to the next request handler. */
 @Injectable()
 export class Interceptor implements HttpInterceptor {
-    private openURLs = [`https://minha-loja-api.herokuapp.com/auth/signin`, `https://minha-loja-api.herokuapp.com/auth/signup`];
+    private openURLs = [`https://minha-loja-api.herokuapp.com/auth/signin`,
+        `https://minha-loja-api.herokuapp.com/auth/signup`,
+        `https://minha-loja-api.herokuapp.com/auth/forgot`,
+        `https://minha-loja-api.herokuapp.com/auth/recovery`
+    ];
     private fileAPI = [
         'http://localhost:8080/v1/logged/save',
         'http://localhost:8080/v1/logged/download'

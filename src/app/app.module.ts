@@ -15,6 +15,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoaderComponent } from './utilities/loader/loader.component';
 import { AlertComponent } from './utilities/alert/alert.component';
 import { SignupComponent } from './signup/signup.component';
+import { ForgotComponent } from './forgot/forgot.component';
+import { RecoveryComponent } from './recovery/recovery.component';
 
 
 
@@ -25,7 +27,9 @@ import { SignupComponent } from './signup/signup.component';
     DashboardComponent,
     LoaderComponent,
     AlertComponent,
-    SignupComponent
+    SignupComponent,
+    ForgotComponent,
+    RecoveryComponent
   ],
   imports: [
     BrowserModule,

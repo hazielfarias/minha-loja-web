@@ -29,6 +29,18 @@ export class LoginService {
       .pipe(catchError(error => throwError(error)));
   }
 
+  forgot(data: User) {
+    return this.http
+      .post(`${this.SERVER_URL}/forgot`, data)
+      .pipe(catchError(error => throwError(error)));
+  }
+
+  recovery(data: User) {
+    return this.http
+      .post(`${this.SERVER_URL}/recovery`, data)
+      .pipe(catchError(error => throwError(error)));
+  }
+
   isLoggedIn(): boolean {
     const accessToken = localStorage.getItem('accessToken');
     return (

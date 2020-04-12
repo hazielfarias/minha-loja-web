@@ -1,0 +1,21 @@
+<div class="recovery-container">
+    <mat-card class="main">
+        <mat-card-title class="text-center mb-4">Digite sua nova Senha
+        </mat-card-title>
+        <form class="form-recovery" (ngSubmit)="onSubmit()" [formGroup]="recoveryForm">
+            <mat-form-field class="w-100 mt-2">
+                <mat-label>Senha</mat-label>
+                <input matInput [formControl]="passwordFormControl" placeholder="Ex. mypass13" type="password">
+                <mat-error *ngIf="passwordFormControl.hasError('required')">
+                    Senha é <strong>obrigatória</strong>
+                </mat-error>
+                <mat-error *ngIf="!passwordFormControl.hasError('required')">
+                    A senha deve ter no minimo 8 caracteres.
+                </mat-error>
+            </mat-form-field>
+            <button mat-raised-button class="w-50 m-2" color="primary" type="submit"
+                [disabled]="!recoveryForm.valid">Alterar Senha</button>
+        </form>
+    </mat-card>
+</div>
+<app-loader *ngIf="loader"></app-loader>

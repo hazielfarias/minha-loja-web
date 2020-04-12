@@ -3,7 +3,6 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Token } from '../models/token';
 
 @Component({
   selector: 'app-signup',
@@ -37,7 +36,7 @@ export class SignupComponent {
   onSubmit() {
     this.loader = true;
     this.service.signup(this.signupForm.value).subscribe(
-      (res: Token) => {
+      res => {
         this.openSnackBar('Usuário cadastrado com sucesso.');
         this.router.navigate(['/login']);
         this.loader = false;

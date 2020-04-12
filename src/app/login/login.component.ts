@@ -45,6 +45,10 @@ export class LoginComponent {
     );
   }
 
+  goToForgot() {
+    this.router.navigate(['/forgot']);
+  }
+
   goToRegister() {
     this.router.navigate(['/signup']);
   }

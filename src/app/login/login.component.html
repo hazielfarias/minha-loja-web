@@ -23,8 +23,10 @@
                     A senha deve ter no minimo 8 caracteres.
                 </mat-error>
             </mat-form-field>
-            <button mat-raised-button class="w-50 m-2 mb-3" color="primary" type="submit"
+            <button mat-raised-button class="w-50 m-2" color="primary" type="submit"
                 [disabled]="!loginForm.valid">Entrar</button>
+
+            <button mat-flat-button class="w-50 m-1" type="button" (click)="goToForgot()">Esqueceu sua senha?</button>
         </form>
 
         <div class="divisor-register">
