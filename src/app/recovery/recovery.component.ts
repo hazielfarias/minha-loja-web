@@ -58,7 +58,7 @@ export class RecoveryComponent implements OnInit {
   openSnackBar(message: string) {
 
     this.snackBar.open(message, 'Fechar', {
-      duration: 3000,
+      duration: 5000,
       verticalPosition: 'top',
       panelClass: 'snack-custom'
     });

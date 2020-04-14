@@ -3,6 +3,7 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-forgot',
@@ -22,7 +23,7 @@ export class ForgotComponent {
     email: this.emailFormControl
   });
 
-  constructor(private service: LoginService, private snackBar: MatSnackBar) { }
+  constructor(private service: LoginService, private snackBar: MatSnackBar, public dialogRef: MatDialogRef<ForgotComponent>) { }
 
   onSubmit() {
     this.loader = true;

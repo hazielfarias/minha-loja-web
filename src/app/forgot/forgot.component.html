@@ -1,21 +1,19 @@
-<div class="forgot-container">
-    <mat-card class="main">
-        <mat-card-title class="text-center mb-4">Digite seu email para recuperar sua senha
-        </mat-card-title>
-        <form class="form-forgot" (ngSubmit)="onSubmit()" [formGroup]="forgotForm">
-            <mat-form-field class="w-100">
-                <mat-label>Email</mat-label>
-                <input matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
-                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                    Por favor insira um email válido
-                </mat-error>
-                <mat-error *ngIf="emailFormControl.hasError('required')">
-                    Email é <strong>obrigatório</strong>
-                </mat-error>
-            </mat-form-field>
-            <button mat-raised-button class="w-50 m-2" color="primary" type="submit"
-                [disabled]="!forgotForm.valid">Enviar Email</button>
-        </form>
-    </mat-card>
-</div>
+<label class="title">Digite seu email para recuperar sua senha
+</label>
+<form class="form-forgot" (ngSubmit)="onSubmit()" [formGroup]="forgotForm">
+    <mat-form-field class="input">
+        <mat-label>Email</mat-label>
+        <input matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Por favor insira um email válido
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email é <strong>obrigatório</strong>
+        </mat-error>
+    </mat-form-field>
+    <button mat-raised-button class="button" color="primary" type="submit" [disabled]="!forgotForm.valid">Enviar
+        Email</button>
+</form>
+
+
 <app-loader *ngIf="loader"></app-loader>

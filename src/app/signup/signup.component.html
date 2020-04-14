@@ -1,9 +1,9 @@
 <div class="signup-container">
     <mat-card class="main">
-        <mat-card-title class="text-center mb-4">Cadastro de Usuário em Minha Loja</mat-card-title>
+        <mat-card-title class="title">Cadastro de Usuário em Minha Loja</mat-card-title>
         <form class="form-signup" (ngSubmit)="onSubmit()" [formGroup]="signupForm">
 
-            <mat-form-field class="w-100">
+            <mat-form-field class="input">
                 <mat-label>Nome Completo</mat-label>
                 <input matInput [formControl]="nameFormControl" placeholder="Ex. Fulado de Tal" type="text">
                 <mat-error *ngIf="passwordFormControl.hasError('required')">
@@ -11,7 +11,7 @@
                 </mat-error>
             </mat-form-field>
 
-            <mat-form-field class="w-100 mt-2">
+            <mat-form-field class="input">
                 <mat-label>Email</mat-label>
                 <input matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
                 <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
@@ -22,7 +22,7 @@
                 </mat-error>
             </mat-form-field>
 
-            <mat-form-field class="w-100 mt-2">
+            <mat-form-field class="input">
                 <mat-label>Senha</mat-label>
                 <input matInput [formControl]="passwordFormControl" placeholder="Ex. mypass13" type="password">
                 <mat-error *ngIf="passwordFormControl.hasError('required')">
@@ -33,14 +33,13 @@
                 </mat-error>
             </mat-form-field>
 
-            <button mat-raised-button class="w-50 m-2 mb-3" color="primary" type="submit"
-                [disabled]="!signupForm.valid">Fazer cadastro</button>
+            <button mat-raised-button class="button" color="primary" type="submit" [disabled]="!signupForm.valid">Fazer
+                cadastro</button>
         </form>
 
         <div class="divisor-register">
-            <p class="divisor">
-                <span class="divisor-text">ou</span></p>
-            <button mat-raised-button class="button-login w-50 mt-2" type="button" (click)="goToLogin()">Entrar</button>
+            <hr class="hr-text" data-content="ou">
+            <button mat-raised-button class="button button-login" type="button" (click)="goToLogin()">Entrar</button>
         </div>
 
     </mat-card>

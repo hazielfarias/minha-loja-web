@@ -4,6 +4,8 @@ import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
 import { Token } from '../models/token';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { ForgotComponent } from '../forgot/forgot.component';
 
 @Component({
   selector: 'app-login',
@@ -28,7 +30,7 @@ export class LoginComponent {
 
   public loader = false;
 
-  constructor(private service: LoginService, private router: Router, private snackBar: MatSnackBar) { }
+  constructor(private service: LoginService, private router: Router, private snackBar: MatSnackBar, public dialog: MatDialog) { }
 
   onSubmit() {
     this.loader = true;
@@ -46,7 +48,8 @@ export class LoginComponent {
   }
 
   goToForgot() {
-    this.router.navigate(['/forgot']);
+    this.dialog.open(ForgotComponent, {
+    });
   }
 
   goToRegister() {
@@ -56,7 +59,7 @@ export class LoginComponent {
   openSnackBar() {
 
     this.snackBar.open('Usuário ou senha incorretos.', 'Fechar', {
-      duration: 3000,
+      duration: 5000,
       verticalPosition: 'top',
       panelClass: 'snack-custom'
     });

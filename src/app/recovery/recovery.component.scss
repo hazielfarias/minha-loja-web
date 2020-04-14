@@ -10,13 +10,24 @@
     width: 640px;
     padding: 40px;
     margin: 20px;
-
+    text-align: center;
+    .title {
+      margin-bottom: 20px;
+    }
     .form-recovery {
       min-width: 120px;
       max-width: 400px;
       width: 100%;
       margin: auto;
       text-align: center;
+      .input {
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
+    .button {
+      width: 200px;
+      margin: 5px;
     }
   }
 }
