@@ -17,6 +17,9 @@ import { AlertComponent } from './utilities/alert/alert.component';
 import { SignupComponent } from './signup/signup.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { RecoveryComponent } from './recovery/recovery.component';
+import { LoginAdminComponent } from './admin/login-admin/login-admin.component';
+import { DashboardAdminComponent } from './admin/dashboard-admin/dashboard-admin.component';
+import { UploadProductComponent } from './admin/upload-product/upload-product.component';
 
 
 
@@ -29,7 +32,10 @@ import { RecoveryComponent } from './recovery/recovery.component';
     AlertComponent,
     SignupComponent,
     ForgotComponent,
-    RecoveryComponent
+    RecoveryComponent,
+    LoginAdminComponent,
+    DashboardAdminComponent,
+    UploadProductComponent
   ],
   imports: [
     BrowserModule,

@@ -23,6 +23,15 @@ export class LoginService {
       .pipe(catchError(error => throwError(error)));
   }
 
+  loginAdmin(data: User) {
+    const headers = new HttpHeaders({
+      Authorization: `Basic ${btoa(data.email + ':' + data.password)}`
+    });
+    return this.http
+      .post(`${this.SERVER_URL}/administrator`, {}, { headers })
+      .pipe(catchError(error => throwError(error)));
+  }
+
   signup(data: User) {
     return this.http
       .post(`${this.SERVER_URL}/signup`, data)
@@ -82,6 +91,12 @@ export class LoginService {
     this.removeTokens();
     this.router.navigate(['/login']);
   }
+
+  logoutAdmin() {
+    this.removeTokens();
+    this.router.navigate(['/admin/login']);
+  }
+
   removeTokens() {
     localStorage.removeItem('accessToken');
     localStorage.removeItem('refreshToken');

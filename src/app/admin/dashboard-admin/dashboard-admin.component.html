@@ -1,0 +1,6 @@
+<mat-toolbar class="navbar-dashboard">
+    <h2 class="user-title">Página do Administrador - {{user}}</h2>
+    <button mat-flat-button class="button-logout" type="button" (click)="logout()">Sair</button>
+</mat-toolbar>
+<app-upload-product></app-upload-product>
+<app-loader *ngIf="loader"></app-loader>
