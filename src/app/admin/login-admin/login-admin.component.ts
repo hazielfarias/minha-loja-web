@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/services/login.service';
 import { Router } from '@angular/router';
@@ -12,7 +12,7 @@ import { ForgotComponent } from 'src/app/forgot/forgot.component';
   templateUrl: './login-admin.component.html',
   styleUrls: ['./login-admin.component.scss']
 })
-export class LoginAdminComponent {
+export class LoginAdminComponent implements OnInit {
 
   emailFormControl = new FormControl('', [
     Validators.required,
@@ -31,6 +31,12 @@ export class LoginAdminComponent {
   public loader = false;
 
   constructor(private service: LoginService, private router: Router, private snackBar: MatSnackBar, public dialog: MatDialog) { }
+
+  ngOnInit(): void {
+    if (this.service.isLoggedIn) {
+      this.router.navigate(['/admin/dashboard']);
+    }
+  }
 
   onSubmit() {
     this.loader = true;
