@@ -20,8 +20,10 @@ import { RecoveryComponent } from './recovery/recovery.component';
 import { LoginAdminComponent } from './admin/login-admin/login-admin.component';
 import { DashboardAdminComponent } from './admin/dashboard-admin/dashboard-admin.component';
 import { UploadProductComponent } from './admin/upload-product/upload-product.component';
-
-
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from 'src/environments/environment';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,10 @@ import { UploadProductComponent } from './admin/upload-product/upload-product.co
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireStorageModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

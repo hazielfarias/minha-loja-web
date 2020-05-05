@@ -1,8 +1,38 @@
 <mat-card class="main">
-    <mat-card-title class="title">Upload de Produtos para Minha Loja</mat-card-title>
-    <mat-form-field class="input">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="Ex. pat@example.com">
-    </mat-form-field>
-    <button mat-raised-button color="primary" class="button" type="button">Teste</button>
+    <form (ngSubmit)="onSubmit()" [formGroup]="productForm">
+        <mat-card-title class="title">Upload de Produtos para Minha Loja</mat-card-title>
+        <mat-form-field class="input">
+            <mat-label>Título</mat-label>
+            <input matInput [formControl]="titleFormControl" placeholder="Ex. Bolsa de couro adibas">
+            <mat-error *ngIf="titleFormControl.hasError('required')">
+                Título é <strong>obrigatório</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input">
+            <mat-label>Descrição</mat-label>
+            <input matInput [formControl]="descriptionFormControl" placeholder="Ex. Muitas alças...">
+        </mat-form-field>
+        <mat-form-field class="input">
+            <mat-label>preço</mat-label>
+            <input matInput [formControl]="priceFormControl" placeholder="Ex. 600.00">
+            <mat-error *ngIf="priceFormControl.hasError('required')">
+                Preço é <strong>obrigatório</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input">
+            <mat-label>Estoque</mat-label>
+            <input matInput [formControl]="stockFormControl" placeholder="Ex. 53">
+            <mat-error *ngIf="stockFormControl.hasError('required')">
+                Estoque é <strong>obrigatório</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <input type="file" (change)="detectFile1($event)">
+        <input type="file" (change)="detectFile2($event)">
+        <input type="file" (change)="detectFile3($event)">
+
+        <button mat-raised-button color="primary" class="button" type="submit"
+            [disabled]="!productForm.valid">Teste</button>
+    </form>
+
 </mat-card>

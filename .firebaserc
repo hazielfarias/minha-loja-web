@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "minha-loja-999f7": {
+      "hosting": {
+        "minha-loja-web": [
+          "minha-loja-999f7"
+        ]
+      }
+    }
+  }
+}
